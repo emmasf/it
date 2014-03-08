@@ -31,6 +31,12 @@
     </div> 
   </div>
 </div>
+
+
+<div class="topbar hide">I toggle open!
+  <p>I hide inside</p>
+</div>
+
     
 <!--
 <div class="interaction-test" id="modal">    
@@ -67,7 +73,9 @@
 
 <!----------------------------------------------------------------------------->
 <!-----------------------------------------------------------------------------> 
-<!----------------------------------------------------------------------------->  
+<!-----------------------------------------------------------------------------> 
+
+ 
 <!--   Begin JS  ------>
 <script src="../local-js/jquery-1.11.0.js"></script>
 <script src="../local-js/jquery-ui-1.10.4.custom.js"></script>
@@ -79,6 +87,20 @@
     $('#drag2').udraggable({
     });
   </script>
+  
+
+<!-- Toggle Bar -->
+<script>
+  $(document).ready(function(){
+    $(".topbar").click(function(){
+      if($(this).hasClass('hide')) {
+        $(this).animate({height:100},200).removeClass('hide');
+      } else { 
+        $(this).animate({height:40},200).addClass('hide');
+      }
+    });
+  });
+</script>
   
 
 

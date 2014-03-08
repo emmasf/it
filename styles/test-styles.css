@@ -30,6 +30,22 @@ h1 {  border-bottom: 3px solid #ccc;}
   position: relative;  
   }
 */
+
+.topbar {
+    height:40px;
+    width:200px;
+    background-color:green;
+    padding: 10px;
+    color: white;
+    }
+
+.hide {
+  background-color:black !important;
+  }
+  
+.topbar.hide p {display: none}
+.topbar p {display: block}
+
 .drawer {
   margin: 0px 5%;
   height: 440px; /* Total amount; amount shown is this - drawer.content*/
