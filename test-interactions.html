@@ -32,29 +32,37 @@
   </div>
 </div>
     
+<!--
 <div class="interaction-test" id="modal">    
   <a class="modalLink" href="#">I open a sliding modal.</a>
   <div class="overlay"></div>
   <div class="modal">
     <a href="#" class="closeBtn">I close the sliding modal.</a>
-    <!-- content here -->
+    <!-- content here
   </div>
 </div>
+-->
+<div class="interaction-test" id="modal-02">   
+  <div><a href="#ex5"><img src="img/begin_drawn.svg"></a></div>
+  <div><p>Hi, I'm an icon that opens a modal.</p></div>
+  <div id="ex5" class="modal">
+    <a href="#" rel="modal:close">Close</a>
+  </div> 
+</div>
+
 
 </div><!-- Container -->
 
 <!-- Bottom Drawer ----------------------------------------------------->
-<!--
-	<section class="drawer">
-			<header class="clickme">I slide up.</header>
-		<div class="drawer-content">
-			<div class="drawer-items">
-			  <img src="img/huntsman_drawn.svg">
-			</div>	
-		</div>
-	</section>
--->
-
+  	<section class="drawer">
+  			<header class="clickme">I slide up.</header>
+  		<div class="drawer-content">
+  			<div class="drawer-items">
+  			  <img src="img/huntsman_drawn.svg">
+  			  <p class="clickme">I slide back down.</p>
+  			</div>	
+  		</div>
+  	</section>
 
 
 <!----------------------------------------------------------------------------->
@@ -82,7 +90,6 @@
 </script>
 
 <!-- Bottom Drawer -->
-<!--
 <script type="text/javascript" src="scripts/jquery.slidedrawer.min.js"></script>
 	<script>
 	$(function(){
@@ -94,7 +101,6 @@
 		});
 	});
 	</script>
--->
 <!--
 /* The drawer is hidden by default. It shows then slides down to let user know something is there.
 Three options true, false, 'slide'. True shows on load, false hides on load, 'slide' shows and hides right away */
@@ -119,33 +125,33 @@ borderHeight: borderHeight
 </script>
 -->
 
-<!-- Sliding Modal -->  
-<script type='text/javascript' src='scripts/jquery.modal.js'></script>
-<script type='text/javascript' src='scripts/site.js'></script>
-<script type="text/javascript">
-  $(document).ready(function(){    
-    $('.modalLink').modal({
-      trigger: '.modalLink',
-      olay:'div.overlay',
-      modals:'div.modal',
-      animationEffect: 'fadeIn',
-      animationSpeed: 400,
-      moveModalSpeed: 'slow',
-      background: '00c2ff',
-      background: '000000',
-      opacity: 0.8,
-      openOnLoad: false,
-      docClose: false,
-      closeByEscape: false,
-      moveOnScroll: true,
-      resizeWindow: false, 
-      close:'.closeBtn'  
-    });  
+<!-- Second Modal -->
+<script src="scripts/jquery.modal.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+    function log_modal_event(event, modal) {
+      if(typeof console != 'undefined' && console.log) console.log("[event] " + event.type);
+      };
+      
+    $(document).on($.modal.BEFORE_BLOCK, log_modal_event);
+    $(document).on($.modal.BLOCK, log_modal_event);
+    $(document).on($.modal.BEFORE_OPEN, log_modal_event);
+    $(document).on($.modal.OPEN, log_modal_event);
+    $(document).on($.modal.BEFORE_CLOSE, log_modal_event);
+    $(document).on($.modal.CLOSE, log_modal_event);
+
+    $('a[href="#ex5"]').click(function(event) {
+      event.preventDefault();
+      $(this).modal({
+        escapeClose: false,
+        clickClose: false,
+        showClose: true,
+        fadeDuration: 1000,
+        fadeDelay: 0.50
+      });
+    });
   });
 </script>
-
-<!-- Second Modal -->
-<script src="jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
 
  
 </body>

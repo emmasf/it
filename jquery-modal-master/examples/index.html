@@ -1,41 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-
-  <script src="../jquery.modal.js" type="text/javascript" charset="utf-8"></script>
-  <link rel="stylesheet" href="../jquery.modal.css" type="text/css" media="screen" />
-  <script type="text/javascript" charset="utf-8"> hljs.initHighlightingOnLoad(); </script>
-  <link rel="stylesheet" href="highlight/github.css" type="text/css" media="screen" />
-  <link href='http://fonts.googleapis.com/css?family=Roboto:300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../jquery.modal.css" type="text/css" media="screen" />
     <title>jQuery Modal</title>
 </head>
 <body>
-<h2>Example 5: the un-closable window</h2>
-<p>
-  This <a href="#ex5">example</a> demonstrates how to disable the default methods of closing the modal:
-
-<pre><code> $("#sticky").modal({
-  escapeClose: false,
-  clickClose: false,
-  showClose: false
-});</code></pre>
-
-
-</p>
+<a href="#ex5">example</a>
 <div id="ex5" class="modal">
   <p>If you do this, be sure to provide the user with an alternate method of <a href="#" rel="modal:close">closing the window.</a></p>
 </div>
 
-<hr />
 
+<!-- BEGIN JS  ---------------------------->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../jquery.modal.js" type="text/javascript" charset="utf-8"></script>
 
 <script type="text/javascript" charset="utf-8">
   $(function() {
 
     function log_modal_event(event, modal) {
       if(typeof console != 'undefined' && console.log) console.log("[event] " + event.type);
-    };
+      };
 
     $(document).on($.modal.BEFORE_BLOCK, log_modal_event);
     $(document).on($.modal.BLOCK, log_modal_event);
@@ -50,7 +36,7 @@
       $(this).modal({
         escapeClose: false,
         clickClose: false,
-        showClose: false,
+        showClose: true,
         fadeDuration: 1000,
         fadeDelay: 0.50
       });

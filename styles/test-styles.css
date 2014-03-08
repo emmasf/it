@@ -1,0 +1,137 @@
+body, html {margin:0; padding:0;}
+
+#container { padding: 50px;}
+
+div.interaction-test > div {float:left;}
+
+h1 {  border-bottom: 3px solid #ccc;}
+
+.interaction-test {
+  min-height:300px;
+  font-size: 24px;
+  }
+  
+#drag2:active > img, #icon-button-01:active, #modal-02:active > img {
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(255,255,0, .75);
+  box-shadow: 0px 0px 15px 5px rgba(255,255,0, .75);
+}
+
+#hide-show p {margin-top: 100px;}
+
+.icon-positioner p, .icon-positioner img {float:left;}
+.icon-positioner p {margin-left: 30px;}
+
+/*
+.drawer-container-fix {
+  position: fixed;
+  bottom: 0;
+  }
+.drawer-container-rel {
+  position: relative;  
+  }
+*/
+.drawer {
+  margin: 0px 5%;
+  height: 440px; /* Total amount; amount shown is this - drawer.content*/
+  overflow: hidden;
+  position: absolute;
+  bottom: -200px;
+  width: 90%;
+  z-index: 5; /* make this what you need to */
+  }
+.drawer > header {
+  background: #000000; /* add image if you want */
+  color: #ffffff;
+  display: block;
+  margin: auto;
+  line-height: 30px;
+  overflow: hidden;
+  padding: 5px;
+  text-align: center;
+  width: 150px;
+  border-top-left-radius: 10px 10px;
+  border-top-right-radius: 10px 10px;
+  
+  }
+.drawer-content {
+  border-collapse: collapse;
+  height: 400px;
+  width: 95%;
+  background-color: #fff;
+  border: 5px solid #000;
+  border-radius: 10px 10px;
+  }
+.drawer-content p {
+  color:black;
+  margin: 50px;
+  }
+.clickme {
+  cursor: pointer;
+  }
+  
+.modal {
+  display: none;
+  width: 400px;
+  background: #fff;
+  padding: 15px 30px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 10px #000;
+  -moz-box-shadow: 0 0 10px #000;
+  -o-box-shadow: 0 0 10px #000;
+  -ms-box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px #000;
+}
+.modal a.close-modal {
+  position: absolute;
+  top: -12.5px;
+  right: -12.5px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  text-indent: -9999px;
+  background: url(close.png) no-repeat 0 0;
+}
+.modal-spinner {
+  display: none;
+  width: 64px;
+  height: 64px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -32px;
+  margin-top: -32px;
+  background: url(spinner.gif) #111 no-repeat center center;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+}
+#modal-02 p {margin: 100px 0 0 50px;}
+
+/*
+.overlay{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  }
+.modal{
+  display: none;
+  background:#eee;
+  padding:0 20px 20px;
+  overflow:auto;
+  z-index:1001;
+  position:absolute;
+  width: 90%;
+  min-height: 90%;
+  border-radius: 4px;
+  }
+*/
