@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../jquery.modal.css" type="text/css" media="screen" />
+    <title>jQuery Modal</title>
+</head>
+<body>
+
+<a href="#ex5">example</a>
+<div id="ex5" class="modal">
+  <p>If you do this, be sure to provide the user with an alternate method of <a href="#" rel="modal:close">closing the window.</a></p>
+</div>
+
+<p>This <a href="ajax.html" rel="modal:open">first example</a> uses <code>rel="modal:open"</code> to automatically load the page contents into a modal via AJAX:</p>
+
+
+<!-- BEGIN JS  ---------------------------->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../jquery.modal.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+
+    function log_modal_event(event, modal) {
+      if(typeof console != 'undefined' && console.log) console.log("[event] " + event.type);
+      };
+
+    $(document).on($.modal.BEFORE_BLOCK, log_modal_event);
+    $(document).on($.modal.BLOCK, log_modal_event);
+    $(document).on($.modal.BEFORE_OPEN, log_modal_event);
+    $(document).on($.modal.OPEN, log_modal_event);
+    $(document).on($.modal.BEFORE_CLOSE, log_modal_event);
+    $(document).on($.modal.CLOSE, log_modal_event);
+
+ $('#more').click(function() {
+      $(this).parent().after($(this).parent().next().clone());
+      $.modal.resize();
+      return false;
+    });
+
+    $('#manual-ajax').click(function(event) {
+      event.preventDefault();
+      $.get(this.href, function(html) {
+        $(html).appendTo('body').modal();
+      });
+    });
+
+
+    $('a[href="#ex5"]').click(function(event) {
+      event.preventDefault();
+      $(this).modal({
+        escapeClose: false,
+        clickClose: false,
+        showClose: true,
+        fadeDuration: 1000,
+        fadeDelay: 0.50,
+      });
+    });
+
+
+  });
+</script>
+</body>
+</html>
