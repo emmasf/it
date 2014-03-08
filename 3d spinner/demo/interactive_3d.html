@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="jquery.interactive_3d.js"></script>
+	<script>
+	  $(document).ready( function() {
+	    $("#i3d").interactive_3d({
+	      frames: 20,
+        cursor: "move",
+        speed: 10,
+        entrance: true,
+        preloadImages: true,
+        touchSupport: true,
+        loading: "Yes",
+        autoPlay: false, 
+	    });
+	  });
+		
+	</script>
+</head>
+<body>
+    <div class="wrapper">	
+    	<div class="main">
+        <div class="page_container">
+          <div id="i3d" class="interactive_3d">
+            <img src="images/apple_01.png">
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+</body>
+</html>
